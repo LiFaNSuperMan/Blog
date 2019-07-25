@@ -56,5 +56,6 @@
 - MMAP
 	- MMAP的主要原理
 		-	通过 mmap 内存映射文件，提供一段可供随时写入的内存块，App 只管往里面写数据，由 iOS 负责将内存回写到文件，不必担心 crash 导致数据丢失。 
+      -	其实core就是通过本地文件和内存地址进行映射，这样就可以完成直接对内存地址就行操作完成对文件的操作。主要是mmap有一个脏页面回写。
 	- MMAP的优缺点
-	- MMAP的主要实现代码
+	- MMAP的主要实现代码[github](https://github.com/LiFaNSuperMan/LFMmap)
