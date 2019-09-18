@@ -5,7 +5,7 @@
 	-	RACStream及其子类
 	  -	RACSignal
 	    -	冷信号
-	      -	简单理解就是现在无人使用只是创建了的信号就是冷信号
+	    	-	简单理解就是现在无人使用只是创建了的信号就是冷信号
 	    -	热信号
 	      -	冷信号通过订阅者订阅信号变成了热信号
 	    -	实现原理
@@ -25,4 +25,11 @@
 	  -	只是对GCD的简单封装，保证任务按顺序执行
 -	清洁工
 	-	RACDisposable及其子类				
-	  -	它封装了取消和清理一次订阅所必需的工作			
+	  -	它封装了取消和清理一次订阅所必需的工作		
+###	常用方法的源码分析
+-	RACObserve
+	-	常见用法
+		-	RACObserve(self.viewModel , isNeedRefresh)		
+	-	实现原理
+	  -	RACObserve最终实现的是NSObject(RACPropertySubscribing) Category中的方法在内部调用NSObject(RACKVOWrapper)中的方法，最终上的实现依赖RACKVOTrampoline，在这里实现了系统级别的KVO方法，将代理转为Block作为输出。简而言之就是在内部实现KVO,然后将KVO的代理回调变成了Block的回调  	
+
