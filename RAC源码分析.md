@@ -27,8 +27,12 @@
 	-	RACDisposable及其子类				
 		-	它封装了取消和清理一次订阅所必需的工作		
 ###	常用方法的源码分析
+
 -	RACObserve
 	-	常见用法
 		-	RACObserve(self.viewModel , isNeedRefresh)		
-	-	实现原理
-		-	RACObserve最终实现的是NSObject(RACPropertySubscribing) Category中的方法在内部调用NSObject(RACKVOWrapper)中的方法，最终上的实现依赖RACKVOTrampoline，在这里实现了系统级别的KVO方法，将代理转为Block作为输出。简而言之就是在内部实现KVO,然后将KVO的代理回调变成了Block的回调 
+			-	RACObserve最终实现的是NSObject(RACPropertySubscribing) Category中的方法在内部调用NSObject(RACKVOWrapper)中的方法，最终上的实现依赖RACKVOTrampoline，在这里实现了系统级别的KVO方法，将代理转为Block作为输出。简而言之就是在内部实现KVO,然后将KVO的代理回调变成了Block的回调 
+		-	Map	映射	FlattenMap
+			-	重新定义返回值，两者的区别在于Map只是修改了返回值，而FlattenMap则直接修改了信号
+		-	Filter
+			-				
