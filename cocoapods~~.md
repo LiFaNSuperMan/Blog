@@ -1,4 +1,4 @@
-##Ruby - Cocoapods - xcconfig
+# Ruby - Cocoapods - xcconfig
 * cocoapods原理晋级
 	* Ruby一切皆对象
 	* Ruby会定义一些方法例如target、pod、source等等解析podfile
@@ -65,7 +65,7 @@
 				  generate_pods_project
 				  integrate_user_project
 				end
-			```	
+			```
 	* 总结最后想说的是 pod install 和 pod update 区别还是比较大的，每次在执行 pod install 或者 update 时最后都会生成或者修改 Podfile.lock 文件，其中前者并不会修改 Podfile.lock 中显示指定的版本，而后者会会无视该文件的内容，尝试将所有的 pod 更新到最新版。
 CocoaPods 工程的代码虽然非常多，不过代码的逻辑非常清晰，整个管理并下载依赖的过程非常符合直觉以及逻辑。
 
